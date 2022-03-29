@@ -5,4 +5,8 @@ public class Main {
         //comments
 
     }
+    public static void show(int n)
+    {
+        System.out.println(n);
+    }
 }
