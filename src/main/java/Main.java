@@ -1,12 +1,8 @@
 public class Main {
     public static void main(String []Args)
     {
-        System.out.println("Hello");
-        //comments
+        myFrame frame = new myFrame();
 
     }
-    public static void show(int n)
-    {
-        System.out.println(n);
-    }
+
 }
