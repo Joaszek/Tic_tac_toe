@@ -16,13 +16,13 @@ public class Pool {
     //final size of pictures
     private static ImageIcon imageCircle;
     private static ImageIcon imageCross;
-    Pool(boolean which_one)
+    Pool()
     {
         JLabel circle_label = new JLabel();
         JPanel panel = new JPanel();
         panel.add(circle_label);
     }
-    void loading_pictures()
+    public static void loading_pictures()
     {
         cross = new ImageIcon("cross.png");
         circle = new ImageIcon("circle.png");
@@ -52,8 +52,16 @@ public class Pool {
         }
         Image dimg2 = img2.getScaledInstance(label2.getWidth(), label2.getHeight(),Image.SCALE_SMOOTH);
 
-        ImageIcon imageCircle = new ImageIcon(dimg);
-        ImageIcon imageCross = new ImageIcon(dimg2);
+        imageCircle = new ImageIcon(dimg);
+        imageCross = new ImageIcon(dimg2);
+    }
+    public static ImageIcon load_image(boolean which_one)
+    {
+        if(which_one)
+        {
+            return imageCross;
+        }
+        return imageCircle;
     }
     public static double get_image_Cross_width()
     {
