@@ -5,7 +5,6 @@ public class Main {
     {
         myFrame frame = new myFrame();
         frame.setBackground(Color.BLACK);
-
     }
 
 }
