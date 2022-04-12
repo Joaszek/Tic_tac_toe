@@ -13,18 +13,20 @@ import static java.awt.Color.BLACK;
 import static java.awt.Color.getColor;
 
 public class myFrame extends JFrame{
-    JLabel pool=new JLabel();
-    private Button []buttons= new Button[9];
-    ClickListener []click = new ClickListener[9];
+    private boolean which_one = true;
+    JLabel pool = new JLabel();
+    private Button[] buttons = new Button[9];
+    ClickListener[] click = new ClickListener[9];
     myFrame()
     {
+        Button.load_images();
         for(int i=0;i<9;i++)
         {
             click[i]=new ClickListener();
         }
 
         for(int i=0;i<9;i++) {
-            buttons[i] = new Button(true);
+            buttons[i] = new Button();
             buttons[i].setBackground(Color.black);
             buttons[i].addActionListener(click[i]);
             this.add(buttons[i]);
@@ -42,6 +44,8 @@ public class myFrame extends JFrame{
         this.setVisible(true);
     }
 
+
+
     /*
     x yyy
     x 147
@@ -58,7 +62,8 @@ public class myFrame extends JFrame{
 
             if(e.getSource()==buttons[0])
             {
-                System.out.println("1");
+                //System.out.println("0");
+                //buttons[0].setIcon();
             }
             else if(e.getSource()==buttons[1])
             {
@@ -66,44 +71,32 @@ public class myFrame extends JFrame{
             }
             else if(e.getSource()==buttons[2])
             {
-                System.out.println("1");
+                System.out.println("2");
             }
             else if(e.getSource()==buttons[3])
             {
-                System.out.println("1");
-            }
-            else if(e.getSource()==buttons[3])
-            {
-                System.out.println("1");
+                System.out.println("3");
             }
             else if(e.getSource()==buttons[4])
             {
-                System.out.println("1");
+                System.out.println("4");
             }
             else if(e.getSource()==buttons[5])
             {
-                System.out.println("1");
+                System.out.println("5");
             }
             else if(e.getSource()==buttons[6])
             {
-                System.out.println("1");
+                System.out.println("6");
             }
             else if(e.getSource()==buttons[7])
             {
-                System.out.println("1");
+                System.out.println("7");
             }
             else if(e.getSource()==buttons[8])
             {
-                System.out.println("1");
+                System.out.println("8");
             }
-            else if(e.getSource()==buttons[9])
-            {
-                System.out.println("1");
-            }
-
-
-
-
         }
     }
 }
