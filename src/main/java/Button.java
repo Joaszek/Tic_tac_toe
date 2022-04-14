@@ -52,11 +52,10 @@ public class Button extends JButton {
 
     Button()
     {
-        //this.setIcon(set_Image(true));
         this.setVisible(true);
     }
 
-    public ImageIcon set_Image(boolean which_one)
+    public static ImageIcon set_Image(boolean which_one)
     {
         if(which_one)return imageCross;
 

@@ -62,40 +62,58 @@ public class myFrame extends JFrame{
 
             if(e.getSource()==buttons[0])
             {
-                //System.out.println("0");
-                //buttons[0].setIcon();
+
+                buttons[0].setIcon(Button.set_Image(which_one));
+                which_one = !which_one;
+                buttons[0].setEnabled(false);
             }
             else if(e.getSource()==buttons[1])
             {
-                System.out.println("1");
+                buttons[1].setIcon(Button.set_Image(which_one));
+                which_one = !which_one;
+                buttons[1].setEnabled(false);
             }
             else if(e.getSource()==buttons[2])
             {
-                System.out.println("2");
+                buttons[2].setIcon(Button.set_Image(which_one));
+                which_one = !which_one;
+                buttons[2].setEnabled(false);
             }
             else if(e.getSource()==buttons[3])
             {
-                System.out.println("3");
+                buttons[3].setIcon(Button.set_Image(which_one));
+                which_one = !which_one;
+                buttons[3].setEnabled(false);
             }
             else if(e.getSource()==buttons[4])
             {
-                System.out.println("4");
+                buttons[4].setIcon(Button.set_Image(which_one));
+                which_one = !which_one;
+                buttons[4].setEnabled(false);
             }
             else if(e.getSource()==buttons[5])
             {
-                System.out.println("5");
+                buttons[5].setIcon(Button.set_Image(which_one));
+                which_one = !which_one;
+                buttons[5].setEnabled(false);
             }
             else if(e.getSource()==buttons[6])
             {
-                System.out.println("6");
+                buttons[6].setIcon(Button.set_Image(which_one));
+                which_one = !which_one;
+                buttons[6].setEnabled(false);
             }
             else if(e.getSource()==buttons[7])
             {
-                System.out.println("7");
+                buttons[7].setIcon(Button.set_Image(which_one));
+                which_one = !which_one;
+                buttons[7].setEnabled(false);
             }
             else if(e.getSource()==buttons[8])
             {
-                System.out.println("8");
+                buttons[8].setIcon(Button.set_Image(which_one));
+                which_one = !which_one;
+                buttons[8].setEnabled(false);
             }
         }
     }
