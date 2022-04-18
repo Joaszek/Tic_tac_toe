@@ -16,6 +16,12 @@ public class Button extends JButton {
     //final size of pictures
     private static ImageIcon imageCircle;
     private static ImageIcon imageCross;
+    //checking score
+    private int horizontal=0;
+    private int vertical=0;
+    private int left_diagonal=0;
+    private int right_diagonal=0;
+
 
     public static void load_images()
     {
@@ -61,5 +67,67 @@ public class Button extends JButton {
 
         return imageCircle;
     }
+    public void change_horizontal(boolean which_one)
+    {
+        if(which_one)horizontal+=1;
+        else horizontal-=1;
+    }
+    public void change_vertical(boolean which_one)
+    {
+        if(which_one) vertical+=1;
+        else vertical-=1;
+    }
+    public void change_left_diagonal(boolean which_one)
+    {
+        if(which_one) left_diagonal+=1;
+        else left_diagonal-=1;
+    }
+    public void change_right_diagonal(boolean which_one)
+    {
+        if(which_one) right_diagonal+=1;
+        else right_diagonal-=1;
+    }
+    public int getHorizontal()
+    {
+        return horizontal;
+    }
+    public int getVertical()
+    {
+        return vertical;
+    }
+    public int getLeft_diagonal()
+    {
+        return left_diagonal;
+    }
+    public int getRight_diagonal()
+    {
+        return right_diagonal;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
