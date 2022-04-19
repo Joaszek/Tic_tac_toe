@@ -38,7 +38,7 @@ public class Button extends JButton {
 
         BufferedImage img = null;
         try {
-            img = ImageIO.read(new File("circle.png"));
+            img = ImageIO.read(new File("circle_2.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -46,7 +46,7 @@ public class Button extends JButton {
 
        BufferedImage img2 = null;
         try {
-            img2 = ImageIO.read(new File("cross.png"));
+            img2 = ImageIO.read(new File("cross_2.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }
