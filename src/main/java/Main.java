@@ -5,8 +5,6 @@ public class Main {
     public static void main(String []Args)
     {
         new MENU();
-        //frame.setBackground(Color.BLACK);
-
     }
 
 }

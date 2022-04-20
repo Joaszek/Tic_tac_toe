@@ -211,42 +211,55 @@ public class MENU extends JFrame {
             //left diagonal
             if(buttons[0].getLeft_diagonal()==3||buttons[0].getLeft_diagonal()==-3)
             {
+                menu_dispose();
                 new Winner_Frame(which_one);
             }
             //first horizontal
             else if(buttons[0].getHorizontal()==3||buttons[0].getHorizontal()==-3)
             {
+                menu_dispose();
                 new Winner_Frame(which_one);
             }
             else if(buttons[0].getVertical()==3||buttons[0].getVertical()==-3)
             {
+                menu_dispose();
                 new Winner_Frame(which_one);
             }
             else if(buttons[1].getVertical()==3||buttons[1].getVertical()==-3)
             {
+                menu_dispose();
                 new Winner_Frame(which_one);
             }
             else if(buttons[2].getVertical()==3||buttons[2].getVertical()==-3)
             {
+                menu_dispose();
                 new Winner_Frame(which_one);
             }
             else if(buttons[2].getRight_diagonal()==3||buttons[2].getRight_diagonal()==-3)
             {
+                menu_dispose();
                 new Winner_Frame(which_one);
             }
             else if(buttons[3].getHorizontal()==3||buttons[3].getHorizontal()==-3)
             {
+                menu_dispose();
                 new Winner_Frame(which_one);
             }
             else if(buttons[6].getHorizontal()==3||buttons[6].getHorizontal()==-3)
             {
+                menu_dispose();
                 new Winner_Frame(which_one);
             }
             else if(number_of_moves==9)
             {
+                menu_dispose();
                 new Winner_Frame();
             }
         }
+    }
+    private void menu_dispose()
+    {
+        this.dispose();
     }
 
 
