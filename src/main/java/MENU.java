@@ -14,6 +14,7 @@ public class MENU extends JFrame {
     JPanel panel_player_vs_bot;
     ImageIcon image;
     JLabel label;
+    int []table;
     private int number_of_moves=0;
     //player vs player
     private boolean which_one = true;
@@ -22,6 +23,8 @@ public class MENU extends JFrame {
     MENU.ClickListener[] click = new MENU.ClickListener[9];
     MENU()
     {
+        //table
+        for(int i=0;i<9;i++)table[i]=0;
         //PANEL
         panel_menu= new JPanel();
         panel_menu.setBounds(0,0,900,900);
@@ -125,6 +128,7 @@ public class MENU extends JFrame {
                 buttons[0].change_horizontal(which_one);
                 buttons[0].change_left_diagonal(which_one);
                 buttons[0].change_vertical(which_one);
+                set_table(0, which_one);
                 number_of_moves++;
             }
             //second vertical
@@ -135,6 +139,7 @@ public class MENU extends JFrame {
                 buttons[1].setEnabled(false);
                 buttons[0].change_horizontal(which_one);
                 buttons[1].change_vertical(which_one);
+                set_table(1, which_one);
                 number_of_moves++;
             }
             //right diagonal
@@ -147,6 +152,7 @@ public class MENU extends JFrame {
                 buttons[2].change_right_diagonal(which_one);
                 buttons[2].change_vertical(which_one);
                 buttons[0].change_horizontal(which_one);
+                set_table(2, which_one);
                 number_of_moves++;
             }
             //second horizontal
@@ -157,6 +163,7 @@ public class MENU extends JFrame {
                 buttons[3].setEnabled(false);
                 buttons[0].change_vertical(which_one);
                 buttons[3].change_horizontal(which_one);
+                set_table(3, which_one);
                 number_of_moves++;
             }
             else if(e.getSource()==buttons[4])
@@ -168,6 +175,7 @@ public class MENU extends JFrame {
                 buttons[1].change_vertical(which_one);
                 buttons[2].change_right_diagonal(which_one);
                 buttons[3].change_horizontal(which_one);
+                set_table(4, which_one);
                 number_of_moves++;
             }
             else if(e.getSource()==buttons[5])
@@ -177,6 +185,7 @@ public class MENU extends JFrame {
                 buttons[5].setEnabled(false);
                 buttons[3].change_horizontal(which_one);
                 buttons[2].change_vertical(which_one);
+                set_table(5, which_one);
                 number_of_moves++;
             }
             else if(e.getSource()==buttons[6])
@@ -187,6 +196,7 @@ public class MENU extends JFrame {
                 buttons[2].change_right_diagonal(which_one);
                 buttons[0].change_vertical(which_one);
                 buttons[6].change_horizontal(which_one);
+                set_table(6, which_one);
                 number_of_moves++;
             }
             else if(e.getSource()==buttons[7])
@@ -196,6 +206,7 @@ public class MENU extends JFrame {
                 buttons[7].setEnabled(false);
                 buttons[6].change_horizontal(which_one);
                 buttons[1].change_vertical(which_one);
+                set_table(7, which_one);
                 number_of_moves++;
             }
             else if(e.getSource()==buttons[8])
@@ -206,6 +217,7 @@ public class MENU extends JFrame {
                 buttons[6].change_horizontal(which_one);
                 buttons[2].change_vertical(which_one);
                 buttons[0].change_left_diagonal(which_one);
+                set_table(8 , which_one);
                 number_of_moves++;
             }
             //left diagonal
@@ -260,6 +272,17 @@ public class MENU extends JFrame {
     private void menu_dispose()
     {
         this.dispose();
+    }
+    private void set_table(int position, boolean which_one)
+    {
+        if(which_one)
+        {
+            table[position]=1;
+        }
+        else
+        {
+            table[position]=-1;
+        }
     }
 
 
