@@ -24,6 +24,7 @@ public class MENU extends JFrame {
     MENU()
     {
         //table
+        table = new int[9];
         for(int i=0;i<9;i++)table[i]=0;
         //PANEL
         panel_menu= new JPanel();
