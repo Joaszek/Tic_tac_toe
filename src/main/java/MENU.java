@@ -16,11 +16,13 @@ public class MENU extends JFrame {
     JLabel label;
     int []table;
     private int number_of_moves=0;
+    Button_Listener button_listener_2;
     //player vs player
     private boolean which_one = true;
 
     private Button[] buttons = new Button[9];
     MENU.ClickListener[] click = new MENU.ClickListener[9];
+    MENU.ClickListener_bot []click_bot= new ClickListener_bot[9];
     MENU()
     {
         //table
@@ -67,6 +69,9 @@ public class MENU extends JFrame {
         player_vs_bot.setBorderPainted(false);
         player_vs_bot.setForeground(Color.BLACK);
 
+        button_listener_2 = new Button_Listener();
+        player_vs_bot.addActionListener(button_listener_2);
+
         panel_menu.add(player_vs_bot);
 
 
@@ -86,7 +91,12 @@ public class MENU extends JFrame {
             if(e.getSource()==player_vs_player)
             {
                 setPanel_player_vs_player();
-                System.out.println("Hello");
+
+            }
+            else if(e.getSource()==player_vs_bot)
+            {
+                setPanel_player_vs_bot();
+
             }
         }
     }
@@ -111,6 +121,27 @@ public class MENU extends JFrame {
 
         panel_player_vs_player.setLayout(new GridLayout(3,3));
         this.add(panel_player_vs_player);
+    }
+    public void setPanel_player_vs_bot()
+    {
+        panel_menu.setVisible(false);
+        panel_player_vs_bot = new JPanel();
+        panel_player_vs_bot.setBounds(0,0,900,900);
+        Button.load_images();
+        for(int i=0;i<9;i++)
+        {
+            click_bot[i]=new MENU.ClickListener_bot();
+        }
+
+        for(int i=0;i<9;i++) {
+            buttons[i] = new Button();
+            buttons[i].setBackground(Color.black);
+            buttons[i].addActionListener(click_bot[i]);
+            panel_player_vs_bot.add(buttons[i]);
+        }
+        //buttons[0].setAction();
+        panel_player_vs_bot.setLayout(new GridLayout(3,3));
+        this.add(panel_player_vs_bot);
     }
     private class ClickListener implements ActionListener
     {
@@ -283,6 +314,176 @@ public class MENU extends JFrame {
         else
         {
             table[position]=-1;
+        }
+    }
+    private class ClickListener_bot implements ActionListener
+    {
+        int random;
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+
+            //first horizontal
+            //left diagonal
+            //left vertical
+            if(e.getSource()==buttons[0])
+            {
+                buttons[0].setIcon(Button.set_Image(true));
+                buttons[0].setEnabled(false);
+                buttons[0].change_horizontal(true);
+                buttons[0].change_left_diagonal(true);
+                buttons[0].change_vertical(true);
+                set_table(0, true);
+                number_of_moves++;
+                Node_2 move= new Node_2(false,table);
+                System.out.println(move.getValue());
+            }
+            //second vertical
+            else if(e.getSource()==buttons[1])
+            {
+                buttons[1].setIcon(Button.set_Image(true));
+                buttons[1].setEnabled(false);
+                buttons[0].change_horizontal(true);
+                buttons[1].change_vertical(true);
+                set_table(1, true);
+                number_of_moves++;
+                Node_2 move= new Node_2(false,table);
+                System.out.println(move.getValue());
+            }
+            //right diagonal
+            //third vertical
+            else if(e.getSource()==buttons[2])
+            {
+                buttons[2].setIcon(Button.set_Image(true));
+                buttons[2].setEnabled(false);
+                buttons[2].change_right_diagonal(true);
+                buttons[2].change_vertical(true);
+                buttons[0].change_horizontal(true);
+                set_table(2, true);
+                number_of_moves++;
+                Node_2 move= new Node_2(false,table);
+                System.out.println(move.getValue());
+            }
+            //second horizontal
+            else if(e.getSource()==buttons[3])
+            {
+                buttons[3].setIcon(Button.set_Image(true));
+                buttons[3].setEnabled(false);
+                buttons[0].change_vertical(true);
+                buttons[3].change_horizontal(true);
+                set_table(3, true);
+                number_of_moves++;
+                Node_2 move= new Node_2(false,table);
+                System.out.println(move.getValue());
+            }
+            else if(e.getSource()==buttons[4])
+            {
+                buttons[4].setIcon(Button.set_Image(true));
+                buttons[4].setEnabled(false);
+                buttons[0].change_left_diagonal(true);
+                buttons[1].change_vertical(true);
+                buttons[2].change_right_diagonal(true);
+                buttons[3].change_horizontal(true);
+                set_table(4, true);
+                number_of_moves++;
+                Node_2 move= new Node_2(false,table);
+                System.out.println(move.getValue());
+            }
+            else if(e.getSource()==buttons[5])
+            {
+                buttons[5].setIcon(Button.set_Image(true));
+                buttons[5].setEnabled(false);
+                buttons[3].change_horizontal(true);
+                buttons[2].change_vertical(true);
+                set_table(5, true);
+                number_of_moves++;
+                Node_2 move= new Node_2(false,table);
+                System.out.println(move.getValue());
+            }
+            else if(e.getSource()==buttons[6])
+            {
+                buttons[6].setIcon(Button.set_Image(true));
+                buttons[6].setEnabled(false);
+                buttons[2].change_right_diagonal(true);
+                buttons[0].change_vertical(true);
+                buttons[6].change_horizontal(true);
+                set_table(6, true);
+                number_of_moves++;
+                Node_2 move= new Node_2(false,table);
+                System.out.println(move.getValue());
+            }
+            else if(e.getSource()==buttons[7])
+            {
+                buttons[7].setIcon(Button.set_Image(true));
+                buttons[7].setEnabled(false);
+                buttons[6].change_horizontal(true);
+                buttons[1].change_vertical(true);
+                set_table(7, true);
+                number_of_moves++;
+                Node_2 move= new Node_2(false,table);
+                System.out.println(move.getValue());
+            }
+            else if(e.getSource()==buttons[8])
+            {
+                buttons[8].setIcon(Button.set_Image(true));
+                buttons[8].setEnabled(false);
+                buttons[6].change_horizontal(true);
+                buttons[2].change_vertical(true);
+                buttons[0].change_left_diagonal(true);
+                set_table(8 , true);
+                number_of_moves++;
+                Node_2 move= new Node_2(false,table);
+                System.out.println(move.getValue());
+            }
+
+            //checking win
+            //left diagonal
+            if(buttons[0].getLeft_diagonal()==3||buttons[0].getLeft_diagonal()==-3)
+            {
+                menu_dispose();
+                new Winner_Frame(which_one);
+            }
+            //first horizontal
+            else if(buttons[0].getHorizontal()==3||buttons[0].getHorizontal()==-3)
+            {
+                menu_dispose();
+                new Winner_Frame(which_one);
+            }
+            else if(buttons[0].getVertical()==3||buttons[0].getVertical()==-3)
+            {
+                menu_dispose();
+                new Winner_Frame(which_one);
+            }
+            else if(buttons[1].getVertical()==3||buttons[1].getVertical()==-3)
+            {
+                menu_dispose();
+                new Winner_Frame(which_one);
+            }
+            else if(buttons[2].getVertical()==3||buttons[2].getVertical()==-3)
+            {
+                menu_dispose();
+                new Winner_Frame(which_one);
+            }
+            else if(buttons[2].getRight_diagonal()==3||buttons[2].getRight_diagonal()==-3)
+            {
+                menu_dispose();
+                new Winner_Frame(which_one);
+            }
+            else if(buttons[3].getHorizontal()==3||buttons[3].getHorizontal()==-3)
+            {
+                menu_dispose();
+                new Winner_Frame(which_one);
+            }
+            else if(buttons[6].getHorizontal()==3||buttons[6].getHorizontal()==-3)
+            {
+                menu_dispose();
+                new Winner_Frame(which_one);
+            }
+            else if(number_of_moves==9)
+            {
+                menu_dispose();
+                new Winner_Frame();
+            }
         }
     }
 

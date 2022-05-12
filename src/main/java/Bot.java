@@ -1,41 +1,10 @@
+import java.util.Random;
+
 public class Bot {
     int []table;
     boolean which_one;
     boolean win=true;
-    Bot(int []table, boolean which_one)
-    {
-        this.table = table;
-        this.which_one= which_one;
-    }
-    //true -x
-    //false - o
-    private int return_position()
-    {
-        while(win)
-        {
-            for(int i=0;i<9;i++)
-            {
-                if(table[i]==0)
-                {
-                    if(which_one)
-                    {
-                        table[i]=1;
-                        which_one=!which_one;
-                        win=!isWin();
-                        return_position();
-                    }
-                    else if(!which_one)
-                    {
-                        table[i]=-1;
-                        which_one=!which_one;
-                        win=!isWin();
-                        return_position();
-                    }
-                }
-            }
-        }
-        return 0;
-    }
+
 
     private boolean isWin()
     {
